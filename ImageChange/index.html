@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>My Image Switcher</title>
+    <style>
+        h1 {
+            color: purple;
+        }
+        .Image1 {
+            border: 1px solid red;
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+        .Image2 {
+            border: 1px solid blue;
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+        button {
+            height: 15px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My 2 Favourite ______</h1>
+    <div>
+        <img class="Image1" src="image_1.png" alt="Image 1">
+        <p></p>
+    </div> 
+    <div>
+        <img class="Image2" src="image_2.png" alt="Image 2">
+        <p></p>
+    </div>
+    <button onclick="imageSwap()">swap</button>
+    <script>
+        const image1 = document.querySelector('.Image1');
+        const image2 = document.querySelector('.Image2');
+        let isImage1Visible = true;
+
+        function imageSwap() {
+            if (isImage1Visible) {
+                image1.src = '';
+                image2.src = 'image_2.png';
+            } else {
+                image1.src = 'image_1.png';
+                image2.src = '';
+            }
+            isImage1Visible = !isImage1Visible;
+        }
+    </script>
+</body>
+</html>
